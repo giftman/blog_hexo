@@ -33,7 +33,7 @@ A study note based on [@Wei Fang](https://github.com/fangwei716)'s awesome [pr
 * tab tab为了兼容android用了react-native-tab-navigator，简洁可定制，如果要可以左右切换效果可以用react-native-scrollable-tab-view。因为这里需要下拉刷新，如果直接用scrollable的tab会下拉不了。而且初始化时load完所有页面数据过大，还是简洁的用第一个较可定制。
 * 现在层的实现都是通过用position:'absolute'，后一层叠在前一层上，试了zIndex再看下效果。
 
-###Day6 Spotify
+### Day6 Spotify
 * 介面实在动人 react-native-video + react-native-swiper 
 * swiper 为了全屏可触用了position:'absolute',它本身可以设置height/width,页面的点在靠下方位置。
 * spotify FontAwesome
@@ -102,3 +102,28 @@ A study note based on [@Wei Fang](https://github.com/fangwei716)'s awesome [pr
 * 第一坑：动画效果是Touch->AnimateView->View->Icon/Touch->AnimateView->Icon,AnimateView放大占满屏幕，View(Icon)缩小相反倍数。
 * 第二坑:输入框外面总包了层View，一为了阴影效果，一个是为了输入的文字在框四周有padding.
 * Animated's easing: Easing.elastic(1)
+
+### Day23 D3
+* WebView直接显示本地html
+* flexDirection改变后alignItem/justifyContent会相应切换，postion absolute是相对父组件的位置。(这两个前面例子也会遇到)
+* img cover效果不错。
+
+### Day24 FacebookTab
+* react-native-scrollable-tab-view 应用，点击时动画慢关闭dev
+* tab's opacity (two icon),the last icon will ease out when selected
+* tabUnderline move when the srcoll value change (use Interpolate)
+* change scrollable-tab-view example facebooktab,change color --> change opacity 
+* layout
+
+### Day26 DrawableLayout
+*  左侧菜单拖动效果
+* 菜单在底下，主页面在上，用触摸控制主页面left。
+* 这个是实现思路，实际应用可参考:react-native-drawer-layout
+
+### Day27 IMessage Gradien
+*  用了Linergradian...我免得加库，直接用opacity测试下，开始opacity变化好慢，不知为什么后来又正常了--
+* 更新页面，1用state 2直接setNativeProps  3 动画？
+* 更新随着位置的变化，除了panResonder/api返回offset,这个也可以UIManager.measure(https://github.com/facebook/react-native/issues/953)
+* findNodeHandle直接从'react-native' 导入了
+
+### Day 28 the last one(happy:)
